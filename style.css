@@ -1,0 +1,1211 @@
+/* ===========================
+
+
+   전역 리셋 & 기본 스타일
+
+
+=========================== */
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+
+
+    font-weight: 100;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+
+
+    font-weight: 200;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+
+
+    font-weight: 300;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+
+
+    font-weight: 400;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+
+
+    font-weight: 500;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+
+
+    font-weight: 600;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+
+
+    font-weight: 700;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+
+
+    font-weight: 800;
+
+
+    font-display: swap;
+
+
+}
+
+
+@font-face {
+
+
+    font-family: 'Paperozi';
+
+
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+
+
+    font-weight: 900;
+
+
+    font-display: swap;
+
+
+}
+
+
+*, *::before, *::after {
+
+
+  box-sizing: border-box;
+
+
+  margin: 0;
+
+
+  padding: 0;
+
+
+  font-family: 'Paperozi';
+
+
+}
+
+
+html, body {
+
+
+  height: 100%;
+
+
+}
+
+
+body {
+
+
+  font-family: 'Noto Sans KR', sans-serif;
+
+
+  min-height: 100vh;
+
+
+  background: linear-gradient(160deg, #c9d6ff 0%, #c8b6e2 35%, #b8d8f0 70%, #c5ecd4 100%);
+
+
+  background-attachment: fixed;
+
+
+  display: flex;
+
+
+  justify-content: center;
+
+
+  align-items: flex-start;
+
+
+}
+
+
+/* ===========================
+
+
+   페이지 래퍼
+
+
+=========================== */
+
+
+.page-wrapper {
+
+
+  width: 100%;
+
+
+  max-width: 640px;
+
+
+  display: flex;
+
+
+  flex-direction: column;
+
+
+  align-items: center;
+
+
+  gap: 28px;
+
+
+}
+
+
+/* ===========================
+
+
+   헤더 – 제목 영역
+
+
+=========================== */
+
+
+.site-header {
+
+
+  text-align: center;
+
+
+  display: flex;
+
+
+  flex-direction: column;
+
+
+  align-items: center;
+
+
+  gap: 8px;
+
+
+}
+
+
+.subtitle {
+
+
+  font-size: 1rem;
+
+
+  font-weight: 700;
+
+
+  color: #fff;
+
+
+  letter-spacing: 0.05em;
+
+
+  text-shadow: 0 1px 6px rgba(60, 60, 120, 0.25);
+
+
+  padding-top: 3rem;
+
+
+}
+
+
+.main-title {
+
+
+  font-size: clamp(2.4rem, 8vw, 3.6rem);
+
+
+  font-weight: 700;
+
+
+  color: #ffffff;
+
+
+  z-index: 0;
+
+
+  position: relative;
+
+
+}
+
+
+
+.main-title::before {
+
+
+  z-index: -1;
+
+
+  content: attr(data-content);
+
+
+  position: absolute;
+
+
+  left: 0;
+
+
+  /* 글자 바깥쪽으로 나갔으면 하는 테두리 크기의 두 배 */
+
+
+  -webkit-text-stroke: 0.5rem rgb(19, 40, 124);
+
+
+}
+
+
+/* ===========================
+
+
+   빙고판 3×3 그리드
+
+
+=========================== */
+
+
+.bingo-board {
+
+
+  display: grid;
+
+
+  grid-template-columns: repeat(3, 1fr);
+
+
+  gap: 12px;
+
+
+  width: 90%;
+
+
+}
+
+
+/* ===========================
+
+
+   빙고 카드 – 플립 컨테이너
+
+
+=========================== */
+
+
+.bingo-card {
+
+
+  position: relative;
+
+
+  width: 100%;
+
+
+  aspect-ratio: 1 / 1;
+
+
+  cursor: pointer;
+
+
+  perspective: 800px;
+
+
+  outline: none;
+
+
+  border-radius: 20px;
+
+
+}
+
+
+.bingo-card:focus-visible .card-inner {
+
+
+  box-shadow: 0 0 0 3px #5580ff;
+
+
+}
+
+
+/* 카드 내부 – 플립 축 */
+
+
+.card-inner {
+
+
+  position: relative;
+
+
+  width: 100%;
+
+
+  height: 100%;
+
+
+  transform-style: preserve-3d;
+
+
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+
+
+  border-radius: 20px;
+
+
+}
+
+
+/* 플립 된 상태 */
+
+
+.bingo-card.flipped .card-inner {
+
+
+  transform: rotateY(180deg);
+
+
+}
+
+
+/* ===========================
+
+
+   앞면 / 뒷면 공통
+
+
+=========================== */
+
+
+.card-front,
+
+
+.card-back {
+
+
+  position: absolute;
+
+
+  inset: 0;
+
+
+  border-radius: 20px;
+
+
+  backface-visibility: hidden;
+
+
+  -webkit-backface-visibility: hidden;
+
+
+  display: flex;
+
+
+  align-items: center;
+
+
+  justify-content: center;
+
+
+  overflow: hidden;
+
+
+}
+
+
+/* ===========================
+
+
+   카드 앞면
+
+
+=========================== */
+
+
+.card-front {
+
+
+  background: rgba(255, 255, 255, 0.82);
+
+
+  backdrop-filter: blur(8px);
+
+
+  -webkit-backdrop-filter: blur(8px);
+
+
+  border: 2px solid rgba(160, 190, 255, 0.6);
+
+
+  box-shadow:
+
+
+    0 4px 18px rgba(100, 130, 220, 0.15),
+
+
+    inset 0 1px 0 rgba(255,255,255,0.9);
+
+
+  transition: background 0.2s, box-shadow 0.2s;
+
+
+}
+
+
+.bingo-card:hover .card-front,
+
+
+.bingo-card:focus-visible .card-front {
+
+
+  background: rgba(255, 255, 255, 0.96);
+
+
+  box-shadow:
+
+
+    0 8px 28px rgba(100, 130, 220, 0.28),
+
+
+    inset 0 1px 0 rgba(255,255,255,0.9);
+
+
+}
+
+
+.card-text {
+
+
+  font-size: clamp(0.8rem, 1.7vw, 5rem);
+
+
+  font-weight: 700;
+
+
+  color: #1a2a6c;
+
+
+  text-align: center;
+
+
+  line-height: 1.3;
+
+
+  padding: 12px 10px;
+
+
+  word-break: keep-all;
+
+
+}
+
+
+/* ===========================
+
+
+   카드 뒷면
+
+
+=========================== */
+
+
+.card-back {
+
+
+  transform: rotateY(180deg);
+
+
+  background: #e8f0ff;
+
+
+  border: 2px solid rgba(100, 150, 255, 0.5);
+
+
+  box-shadow: 0 4px 18px rgba(100, 130, 220, 0.2);
+
+
+  flex-direction: column;
+
+
+}
+
+
+.card-img {
+
+
+  position: absolute;
+
+
+  inset: 0;
+
+
+  width: 100%;
+
+
+  height: 100%;
+
+
+  object-fit: cover;
+
+
+  border-radius: 18px;
+
+
+  filter: brightness(0.82) saturate(1.1);
+
+
+  transition: filter 0.3s;
+
+
+}
+
+
+/* 뒷면 텍스트 라벨 (이미지 위 오버레이) */
+
+
+.card-back-label {
+
+
+  position: absolute;
+
+
+  bottom: 0;
+
+
+  left: 0;
+
+
+  right: 0;
+
+
+  padding: 10px 10px 12px;
+
+
+  background: linear-gradient(to top, rgba(10, 20, 80, 0.78) 0%, transparent 100%);
+
+
+  border-radius: 0 0 18px 18px;
+
+
+  text-align: center;
+
+
+  z-index: 2;
+
+
+}
+
+
+.card-back-label span {
+
+
+  font-size: clamp(0.6rem, 2vw, 1rem);
+
+
+  font-weight: 700;
+
+
+  color: #fff;
+
+
+  line-height: 1.45;
+
+
+  word-break: keep-all;
+
+
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+
+
+}
+
+
+/* 완료 체크 배지 */
+
+
+.check-badge {
+
+
+  position: absolute;
+
+
+  top: 8px;
+
+
+  right: 8px;
+
+
+  width: 28px;
+
+
+  height: 28px;
+
+
+  background: #4caf50;
+
+
+  border: 2px solid #fff;
+
+
+  border-radius: 50%;
+
+
+  display: flex;
+
+
+  align-items: center;
+
+
+  justify-content: center;
+
+
+  font-size: 0.85rem;
+
+
+  color: #fff;
+
+
+  font-weight: 900;
+
+
+  z-index: 3;
+
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+
+
+}
+
+
+/* ===========================
+
+
+   빙고 완성 라인 애니메이션
+
+
+=========================== */
+
+
+@keyframes bingoFlash {
+
+
+  0%   { opacity: 1; transform: scale(1); }
+
+
+  50%  { opacity: 0.6; transform: scale(1.08); }
+
+
+  100% { opacity: 1; transform: scale(1); }
+
+
+}
+
+
+.bingo-card.bingo-line {
+
+
+  animation: bingoFlash 0.6s ease 3;
+
+
+}
+
+
+.bingo-card.bingo-line .card-back {
+
+
+  border-color: #f9ca24;
+
+
+  box-shadow: 0 0 0 3px #f9ca24, 0 4px 18px rgba(249,202,36,0.4);
+
+
+}
+
+
+/* ===========================
+
+
+빙고 메시지
+
+
+=========================== */
+
+
+.bingo-footer {
+
+
+  display: flex;
+
+
+  flex-direction: column;
+
+
+  align-items: center;
+
+
+  gap: 10px;
+
+
+}
+
+
+.bingo-counter {
+
+
+  background: rgba(255, 255, 255, 0.75);
+
+
+  backdrop-filter: blur(6px);
+
+
+  -webkit-backdrop-filter: blur(6px);
+
+
+  border: 2px solid rgba(160, 190, 255, 0.55);
+
+
+  border-radius: 40px;
+
+
+  padding: 10px 28px;
+
+
+  font-size: 1rem;
+
+
+  font-weight: 700;
+
+
+  color: #1a2a6c;
+
+
+  box-shadow: 0 2px 12px rgba(100, 130, 220, 0.15);
+
+
+}
+
+
+.bingo-counter #completed-count {
+
+
+  font-size: 1.3rem;
+
+
+  color: #3a5bd9;
+
+
+}
+
+
+.bingo-line-msg {
+
+
+  min-height: 1.8em;
+
+
+  font-size: 1.25rem;
+
+
+  font-weight: 900;
+
+
+  color: #fff;
+
+
+  text-shadow:
+
+
+    0 0 10px rgba(249, 202, 36, 0.8),
+
+
+    0 2px 6px rgba(0,0,0,0.3);
+
+
+  letter-spacing: 0.04em;
+
+
+  text-align: center;
+
+
+  transition: opacity 0.4s;
+
+
+}
+
+
+/* ===========================
+
+
+미션 인증 안내
+
+
+=========================== */
+
+
+.notice {
+
+
+  width:90% ;
+
+
+  font-size: 0.7rem;
+
+
+  color: white;
+
+
+  margin-bottom: 6rem;
+
+
+  padding: 0.8rem;
+
+
+  background-color: rgb(247, 66, 66);
+
+
+  border-radius: 1rem;
+
+
+  text-align: center;
+
+
+}
+
+
+@keyframes fadeIn {
+
+
+  from { opacity: 0; }
+
+
+  to   { opacity: 1; }
+
+
+}
+
+
+.bingo-popup {
+
+
+  background: linear-gradient(135deg, #e0eaff, #f8f0ff);
+
+
+  border-radius: 28px;
+
+
+  padding: 40px 44px;
+
+
+  text-align: center;
+
+
+  box-shadow: 0 12px 50px rgba(30, 60, 180, 0.35);
+
+
+  max-width: 340px;
+
+
+  width: 90%;
+
+
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+}
+
+
+@keyframes popIn {
+
+
+  from { transform: scale(0.7); opacity: 0; }
+
+
+  to   { transform: scale(1);   opacity: 1; }
+
+
+}
+
+
+.bingo-popup .popup-emoji {
+
+
+  font-size: 3.5rem;
+
+
+  margin-bottom: 12px;
+
+
+  display: block;
+
+
+}
+
+
+.bingo-popup h2 {
+
+
+  font-size: 2rem;
+
+
+  font-weight: 900;
+
+
+  color: #1a2a6c;
+
+
+  -webkit-text-stroke: 2px #fff;
+
+
+  paint-order: stroke fill;
+
+
+  text-shadow: 2px 2px 0 #3a5bd9;
+
+
+  margin-bottom: 8px;
+
+
+}
+
+
+.bingo-popup p {
+
+
+  font-size: 1rem;
+
+
+  font-weight: 700;
+
+
+  color: #3a5bd9;
+
+
+  margin-bottom: 24px;
+
+
+}
+
+
+.bingo-popup button {
+
+
+  background: linear-gradient(135deg, #4776e6, #8e54e9);
+
+
+  color: #fff;
+
+
+  border: none;
+
+
+  border-radius: 40px;
+
+
+  padding: 12px 36px;
+
+
+  font-size: 1rem;
+
+
+  font-weight: 700;
+
+
+  cursor: pointer;
+
+
+  font-family: 'Noto Sans KR', sans-serif;
+
+
+  box-shadow: 0 4px 18px rgba(100, 90, 220, 0.35);
+
+
+  transition: transform 0.15s, box-shadow 0.15s;
+
+
+}
+
+
+.bingo-popup button:hover {
+
+
+  transform: translateY(-2px);
+
+
+  box-shadow: 0 6px 22px rgba(100, 90, 220, 0.5);
+
+
+}
+
+
+/* ===========================
+
+
+   반응형
+
+
+=========================== */
+
+
+@media (max-width: 420px) {
+
+
+  body {
+
+
+    padding: 24px 10px 48px;
+
+
+  }
+
+
+  .bingo-board {
+
+
+    gap: 8px;
+
+
+  }
+
+
+  
+
+
+}
+
+
+@media (min-width: 610px) {
+
+
+  .card-text {
+
+
+    font-size: 1.1rem;
+
+
+  }
+
+
+}
+
+
+@media (min-width: 641px) {
+
+
+  .page-wrapper {
+
+
+    max-width: 700px;
+
+
+  }
+
+
+  .card-text {
+
+
+    font-size: 1.2rem;
+
+
+  }
+
+
+}
